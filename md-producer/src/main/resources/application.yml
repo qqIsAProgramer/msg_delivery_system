@@ -1,0 +1,29 @@
+server:
+  port: 8001
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://118.31.16.35:3306/msg_delivery_system?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+  rabbitmq:
+    virtual-host: /order
+    username: admin
+    password: 123456
+    addresses: 118.31.16.35:5672
+    # 开启消息确认机制 confirm 异步
+    publisher-confirm-type: correlated
+    # 开启 return 机制（Return Listener 用于处理一些不可路由的消息）
+    publisher-returns: true
+    template:
+      # mandatory 为 true 监听器会接收到路由不可达的消息，然后进行后续处理
+      #如果为 false，那么broker端自动删除该消息
+      mandatory: true
+
+mybatis:
+  type-aliases-package: com.pitaya.model
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true

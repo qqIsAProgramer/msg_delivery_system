@@ -1,0 +1,4 @@
+# Project exclude paths
+/md-common/target/
+/md-consumer/target/
+/md-producer/target/

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.pitaya.mapper.OrderMapper">
+
+    <insert id="insertOrder" parameterType="Order" keyProperty="id" useGeneratedKeys="true">
+        insert into msg_delivery_system.t_order (id, name, message_id)
+        values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{messageId,jdbcType=VARCHAR})
+    </insert>
+
+</mapper>

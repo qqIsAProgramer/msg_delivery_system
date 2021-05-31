@@ -6,7 +6,7 @@ spring:
     virtual-host: /order
     username: admin
     password: 123456
-    addresses: 118.31.16.35:5672
+    addresses: localhost:5672
     # 消费端配置
     listener:
       simple:

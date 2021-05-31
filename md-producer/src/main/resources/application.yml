@@ -5,14 +5,14 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://118.31.16.35:3306/msg_delivery_system?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://localhost:3306/msg_delivery_system?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
     username: root
     password: 123456
   rabbitmq:
     virtual-host: /order
     username: admin
     password: 123456
-    addresses: 118.31.16.35:5672
+    addresses: localhost:5672
     # 开启消息确认机制 confirm 异步
     publisher-confirm-type: correlated
     # 开启 return 机制（Return Listener 用于处理一些不可路由的消息）
